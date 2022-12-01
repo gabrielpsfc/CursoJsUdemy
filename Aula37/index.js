@@ -48,10 +48,8 @@ const pessoa = {
 for (let key in pessoa) {
     console.log(key, pessoa[key])
 }
-console.log('#############################################')
-for (let valor of pessoa){
-    console.log(valor)
-}
+
+
 // for Clássico - Geralmente com iteráveis (Array ou strings)
 // for in - Retorna o índice/chave (string, array ou objetos)
 // for of - Retorna o valor em si (iteráveis, arrays ou strings)
