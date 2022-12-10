@@ -31,4 +31,20 @@ function iniciarRelogio (){
     }, 1000)
 }
 
-iniciarRelogio()
+
+
+
+
+
+//btnAddTarefa.addEventListener('click', function(e){
+//   if ( !inputTarefas.value) return;
+////    criaTarefa(inputTarefas.value)
+    
+//})
+
+var input = 15
+function retorno (input){
+if (!input) console.log(input)
+console.log(input)}
+
+retorno(15)
