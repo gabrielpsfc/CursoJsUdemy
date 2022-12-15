@@ -48,3 +48,8 @@ if (!input) console.log(input)
 console.log(input)}
 
 retorno(15)
+
+function regraTres(var1, var2, var3, ){
+    return (var1 * var3)/ var2
+}
+console.log(regraTres(1,1.5,13))

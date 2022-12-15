@@ -24,3 +24,4 @@
 })(30,80,1.80)
 
 
+// envolve a função em () e a chama imediatamente com () após
