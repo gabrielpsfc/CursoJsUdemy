@@ -4,13 +4,16 @@
 const nomes = ['Maria', 'Joao', 'Eduardo', 'Gabriel', 'Julia']
 const nomes1 = ['Maria', 'Joao', 'Eduardo', 'Gabriel', 'Julia']
 const nomes2 = ['Maria', 'Joao', 'Eduardo', 'Gabriel', 'Julia']
-
-//nomes.splice(indice, delete nomes,  elemento1, elemento2, elemento3 )
+// splice altera a função original
+//nome.splice(('Indice aonde se inicia a alteração'), (Quantos elementes a serem removidos), Elementos1, elemento2,  )
+//nomes.splice(indice, delete,  elemento1, elemento2, elemento3 )
 //pop
 // remove ultimo item de array e pode salva-lo como array em outra variável
 const removidos = nomes.splice(4, 1)
+// da esquerta para direito, removendo inicialmente o indece 4, gostaria de remover 1 elemento
 console.log(nomes, removidos)
 const removido1 = nomes.splice(2, 2)
+//salva o elemento removido na array removido
 console.log(nomes, removido1, removidos)
 // selecionar até o ultimo item de array
 // O remove é sempre da esquerda para a direita
