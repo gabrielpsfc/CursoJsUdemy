@@ -26,17 +26,17 @@ console.log(Object.getPrototypeOf(objA))
 
 // add metodo in prototype
 // colocar métodos no seu 
-function Produto (nome, preco){
+function Produto(nome, preco) {
     this.nome = nome
     this.preco = preco
 }
 
-Produto.prototype.desconto = function (percen){
-    this.preco = this.preco - (this.preco * (percen/100) )
+Produto.prototype.desconto = function (percen) {
+    this.preco = this.preco - (this.preco * (percen / 100))
 }
 
-Produto.prototype.aumento = function(percen){
-    this.preco = this.preco * (1 + (percen/100))
+Produto.prototype.aumento = function (percen) {
+    this.preco = this.preco * (1 + (percen / 100))
 }
 
 const p1 = new Produto('Camiseta', 50)
@@ -47,7 +47,7 @@ console.log(p1)
 
 //literal
 const p2 = {
-    nome:   'Caneca',
+    nome: 'Caneca',
     preco: 15
 }
 
@@ -145,3 +145,76 @@ set __proto__
 : 
 ƒ __proto__()
  */
+
+
+var twoSum = function (nums, target) {
+    for (let i in nums) {
+        if (i >= 1)
+            console.log(nums[i] + nums[i - 1])
+        if (nums[i] + nums[i - 1] == target) {
+            return [i - 1, Number(i)]
+        }
+    }
+}
+
+
+var twoSum1 = function (nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] == target) {
+                if (i !== j) {
+                    return [i, j];
+                }
+            }
+        }
+    }
+}
+
+
+var twoSum2 = function (nums, target) {
+    var j = 1
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] + nums[j] == target) {
+            return [i, j]
+        } else {
+            j++
+        }
+    }
+}
+
+
+var twoSum3 = function (nums, target) {
+    for (let i in nums) {
+        for (let j in nums) {
+            if (nums[i] + nums[j] === target && i != j) {
+                return [i, j]
+            }
+
+        }
+    }
+
+}
+
+
+var twoSum4 = function(nums, target) {
+    const hash = {};
+    for ( let i = 0; i < nums.length; i++ ) {
+      let diff = target - nums[i];
+      console.log(target - nums[i])
+      console.log(hash[diff], nums[i])
+      if ( typeof hash[diff] != 'undefined' && hash[diff] !== i ) {
+        return ( [hash[diff], i] );
+      } else {
+        hash[nums[i]] = i;
+      }
+    }
+    return [];
+  };
+
+
+
+console.log(twoSum([3, 2, 3], 6))
+console.log(twoSum1([3, 2, 3], 6))
+console.log(twoSum2([3, 2, 3], 6))
+console.log(twoSum3([3, 2, 3], 6))
+twoSum4([3, 2, 3], 6)
