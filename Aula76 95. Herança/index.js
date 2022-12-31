@@ -45,22 +45,24 @@ camiseta.aumento(100)
 console.log(camiseta)
 
 
-function Caneca (nome, preco, material, estoque){
-    Produto.call(this, nome, preco)
-    this.material = material,
+class Caneca {
+    constructor(nome, preco, material, estoque) {
+        Produto.call(this, nome, preco)
+        this.material = material,
 
-    Object.defineProperty(this, 'estoque',{
-        enumerable: true,
-        configurable: false,
-        get: function(){
-            return estoque
-        },
-        set: function (valor){
-            if( typeof valor !== 'number') return
-            estoque = valor
-        }
-     
-    })
+            Object.defineProperty(this, 'estoque', {
+                enumerable: true,
+                configurable: false,
+                get: function () {
+                    return estoque
+                },
+                set: function (valor) {
+                    if (typeof valor !== 'number')
+                        return
+                    estoque = valor
+                }
+            })
+    }
 }
 Caneca.prototype = Object.create(Produto.prototype)
 const caneca = new Caneca('Caneca', 13, 'Plástico', 5)
