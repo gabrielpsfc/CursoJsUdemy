@@ -15,7 +15,7 @@ class ValidaFormulário {
     e.preventDefault() // 5 para que o furmulário não seja enviado
     // se camposValidos = true o formulário é enviado
     const camposValidos = this.camposSaoValidos() // 6 checar se os campos estão preenchidos
-    const senhasValidas = this.senhasSaoValidas() // 35 criar const senhasValidas
+    const senhasValidas = this.senhasSaoValidas() // 36 criar const senhasValidas
 
     if(camposValidos && senhasValidas) { //50 testar camposValidos e senhasValidas
       alert('ok')
@@ -45,7 +45,7 @@ class ValidaFormulário {
     }   
 
 
-    return valid // 40 retornar valid
+    return valid // 40 retornar valid 
   }
 
   camposSaoValidos() { //7  criar função que checa se os campos estão preenchidos
@@ -64,7 +64,7 @@ class ValidaFormulário {
         valid = false // 16 mudar a flag valid caso algum campo não esteja preenchido       
       }
 
-      if (campo.classList.contains('cpf')) {// 18 selecionar campo com class cpf/ textar se ele está preencido
+      if (campo.classList.contains('cpf')) {// 18 selecionar campo com class cpf/ testar se ele está preenchido
         if (!this.validaCPF(campo)) valid = false  // 19 se valida cpf for false, valid = false
       }
       if(campo.classList.contains('usuario')){ // 25  selecionar campo com class usuario
@@ -73,28 +73,28 @@ class ValidaFormulário {
 
     }
     return valid // 37 return valid no for
-  }
+  } 
 
   validaUsuario(campo){ // 27 criar função valida funcionario
     const usuario = campo.value // 28 criar a const usuario
     let valid = true //  30 criar variável valid no metodo
-    if(usuario.length < 3 || usuario.length > 12){ //29 textar lenght de usuario
+    if(usuario.length < 3 || usuario.length > 12){ //29 testar lenght de usuario
       this.criaErro(campo, 'usuário precisa ter entre 3 e 12 caracteres') // 31 criar erro usuario
       valid = false // 32 valid =  false
     }
                   //  aprender expressão regular
-    if(!usuario.match(/^[a-zA-Z0-9]+$/g)){ // 33 textar se usuário contem apenas letras e numero
+    if(!usuario.match(/^[a-zA-Z0-9]+$/g)){ // 33 testar se usuário contem apenas letras e numero
       this.criaErro(campo, 'Nome de usuário precisa conter apenas letras e/ou números') // 34criar erro refente ao uso de caracteres além de letras e numeros
       valid = false // 35 valid =  false
     }
-
+textar 
     return valid
   }
 
   validaCPF(campo) { // 20 criar função validaCPF
     const cpf = new ValidaCPF(campo.value) // 21 usar class ValidaCPF para criar o objeto cpf
 
-    if (!cpf.valida()) { // 22 utiliza a função valida() para textar de o cpf fornecido é válido
+    if (!cpf.valida()) { // 22 utiliza a função valida() para testar de o cpf fornecido é válido
       this.criaErro(campo, 'CPF inválido') // 23 criar erro cpf
       return false // 24  retorna falso caso cpf n seja valido
     }
