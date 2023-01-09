@@ -8,14 +8,15 @@ function rand(min = 0, max = 1.5) {
 }
 
 function esperaAi(msg, tempo) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (typeof msg !== 'string') {
-                reject('CAI NO ERRO')
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            if(typeof msg !== 'string'){
+                reject('CAI ERRO')
+                return
             }
-            resolve(msg.toUpperCase() + ' -  Passei na promise')
+            resolve(msg.toUpperCase())
             return
-        }, tempo)
+        },tempo)
     })
 }
 
@@ -55,5 +56,13 @@ async function executaTratado() {
     }
 }
 executaTratado()
+
+esperaAi('OK', rand).then(e => {
+    console.log(e)
+    return esperaAi(0, rand())}).then(e => {
+        console.log(e)
+        return esperaAi('ok3', rand())}).then(e => {
+            console.log(e)
+            return esperaAi('ok4', rand())}).then(e => console.log(e)).catch(e => console.log(e))
 
 
