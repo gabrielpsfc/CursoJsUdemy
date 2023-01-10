@@ -2,6 +2,7 @@ console.log('only for submit text')
 
 let date = new Date('2022-12-12 01:01:01.000Z')
 let date1 = new Date('2022-12-01 13:01:01.000Z').toLocaleTimeString('pt-BR',{hour12: false, timeZone: 'GMT'})
+data.
 console.log(date)
 console.log(date1)
 
@@ -36,6 +37,7 @@ function iniciarRelogio (){
 
 
 
+
 //btnAddTarefa.addEventListener('click', function(e){
 //   if ( !inputTarefas.value) return;
 ////    criaTarefa(inputTarefas.value)
@@ -54,3 +56,28 @@ function regraTres(var1, var2, var3, ){
 }
 console.log(regraTres(1,1.5,13))
 
+
+var firstName = 'John', lastName = 'Doe', age = 35
+console.log(firstName, lastName, age )
+
+
+
+
+let txt = "I can eat bananas all day";
+let x = txt.slice(10, 17).toL
+console.log(x)
+
+const cars = ["Saab", "Volvo", "BMW"].splice
+console.log(cars[0])
+cars[0] = "Ford"
+console.log(cars)
+
+const fruits = ["Banana", "Orange", "Apple", "Kiwi"].sort()
+console.log(fruits)
+fruits.splice(1,2)
+console.log(fruits)
+
+x = Math.sqrt
+
+document.getElementById('demo').innerText
+document.getElementsByTagName("demo").innerText
