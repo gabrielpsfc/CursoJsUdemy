@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (requisição, resposta, next)=>{
-
+    resposta.locals.umaVariavelLocal = 'Este é o valor da variável local'
 
     if(requisição.body.cliente){
         requisição.body.cliente = requisição.body.cliente.replace('Soares', 'Soares é inválido')
