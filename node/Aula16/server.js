@@ -1,11 +1,11 @@
 require('dotenv').config()
-
-
 const express = require('express')
 const app = express()
 const routes = require('./routes')
 const path = require('path')
-const {middlewareGlobal, outroMiddleware} = require('./src/middlewares/middleware')
+const helmet = require('helmet')
+const csrf = require('csurf')
+const {middlewareGlobal, outroMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware')
 const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', true)
@@ -37,7 +37,7 @@ const flash = require('connect-flash')
 // EuMesmo YoKcByaIYqHXZj3i PROJETOAGORAVAI
 // mongodb+srv://EuMesmo:YoKcByaIYqHXZj3i@cluster0.e8xaqlc.mongodb.net/BancoDeDados?retryWrites=true&w=majority
 
-
+app.use(helmet())
 
 app.use(express.urlencoded({extended: true}))
 
@@ -63,9 +63,11 @@ app.set('views', path.resolve(__dirname,'src', 'views'))
 app.set('view engine', 'ejs')
 
 //Nossos proprios middlewares
-app.use(middlewareGlobal)
+app.use(csrf())
+app.use(middlewareGlobal);
+app.use(checkCsrfError);
+app.use(csrfMiddleware);
 app.use(outroMiddleware)
-
 app.use(routes)
 
 
